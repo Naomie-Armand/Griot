@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Make Haitian Griot</title>
+  <style>
+    /* Reset & base */
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f9f4ea;
+      color: #333;
+    }
+    a { text-decoration: none; }
+
+    /* Tooltip styling */
+    .definition {
+      position: relative;
+      color: #d9534f;
+      font-style: italic;
+      cursor: help;
+    }
+    .definition::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .definition:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Header & Nav */
+    header {
+      background: #d9534f;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    header h1 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;     /* space between title and nav */
+    text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0;   
+      margin: 0;
+    }
+    nav a {
+      display: inline-flex;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      transition: background 0.2s;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Hero image */
+    .hero {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 1rem 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Grid layout */
+    .grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+      align-items: start;          /* ensure sticky works */
+    }
+    @media (min-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .grid > section {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Center ingredient image */
+    #ingredients .step-img {
+      display: block;
+      margin: 1rem auto;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 {
+      margin-bottom: 0.75rem;
+      color: #d9534f;
+      font-size: 1.5rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    li + li { margin-top: 0rem }
+
+    .step-img {
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      margin: 1rem 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Stick the directions panel */
+    #directions {
+      position: sticky;
+      top: 2rem;       /* distance from top of viewport */
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #eee;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: #d9534f; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>How to Make Haitian Griot</h1>
+    <nav>
+      <ul>
+
+        <li><a href="#intro">Home</a></li>
+        <li><a href="#ingredients">Ingredients</a></li>
+        <li><a href="#directions">Directions</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Intro -->
+    <section id="intro">
+      <p>
+        Haitian cuisine is rich with history, flavor, and resilience, and no dish represents that better than 
+        <span class="definition" data-tooltip="Tender cubes of pork marinated in citrus and spices, then fried.">
+          Griot
+        </span>.
+        Made by marinating pork in citrus, herbs, and spices before simmering and frying it to perfection, this dish is a centerpiece of gatherings 
+        across 
+        <a href="https://en.wikipedia.org/wiki/Haiti" target="_blank" rel="noopener noreferrer" class="definition" data-tooltip="A Caribbean nation with 
+        a unique history and delicious cuisine."><em>Haiti</em></a>. 
+        It’s traditionally served with 
+        <span class="definition" data-tooltip="A spicy Haitian pickled cabbage relish.">
+          Pikliz
+        </span> 
+        and fried plantains, creating a balance of spicy, savory, and sweet.
+        <br>
+        I chose to share this recipe not only because of how meaningful it is to my family, but also to help more people appreciate the beauty of 
+        Haitian food and culture. 
+        Through food, we celebrate our roots and invite others to experience a small piece of what makes <a href="https://en.wikipedia.org/wiki/Haiti" target="_blank" rel="noopener noreferrer" class="definition" data-tooltip="A Caribbean nation with 
+        a unique history and delicious cuisine."><em>Haiti</em></a> vibrant and unforgettable.
+      </p>
+      <img
+        src="griot.jpg"
+        alt="Plate of Haitian Griot with pikliz and plantains"
+        class="hero"
+      />
+    </section>
+
+    <!-- Two-column ingredients & directions -->
+    <div class="grid">
+      <!-- Ingredients -->
+      <section id="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          <li>2 lbs pork shoulder, cut into 1-inch cubes</li>
+          <li>Juice of 2 limes</li>
+          <li>1 tbsp vinegar</li>
+          <li>1 tbsp salt</li>
+          <li>½ tsp black pepper</li>
+          <li>1 tsp dried thyme</li>
+          <li>4 cloves garlic, minced</li>
+          <li>1 medium onion, sliced</li>
+          <li>
+            <span class="definition" data-tooltip="A very hot pepper commonly used in Caribbean cooking.">2 scotch bonnet peppers</span>, seeded & chopped
+          </li>
+          <li>
+            1 <span class="definition" data-tooltip="A small cube of concentrated stock used to flavor soups and stews.">Maggi bouillon cube</span>
+          </li>
+          <li>2 cups water or chicken broth</li>
+          <li>Oil for frying</li>
+        </ul>
+        <img
+          src="prep.png"
+          alt="Marinated pork ready to cook"
+          class="step-img"
+        />
+      </section>
+
+      <!-- Directions -->
+      <section id="directions">
+        <h2>Directions</h2>
+        <ol>
+          <li>In a bowl, mix pork with lime juice, vinegar, salt, pepper, thyme, garlic, onion, and peppers.</li>
+          <li>Cover and marinate in the refrigerator for at least 4 hours or overnight.</li>
+          <li>Transfer to a pot, add water or broth, and bring to a boil.</li>
+          <li>Reduce heat, cover, and simmer 45 minutes until pork is tender.</li>
+          <li>Remove pork, drain, and pat dry with paper towels.</li>
+          <li>Heat oil in a skillet over medium-high heat.</li>
+          <li>Fry pork pieces until golden and crispy, about 5–7 minutes.</li>
+          <li>Drain on paper towels. Serve hot with <span class="definition" data-tooltip="A spicy Haitian pickled cabbage relish.">pikliz</span> and fried plantains.</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <p><a href="mailto: naomie.armand@csuglobal.edu">Naomie Armand</a></p>
+    <p>
+      Image credits:
+      <a href="https://www.flickr.com/photos/lea-kim/42675563925/" target="_blank">
+        Châteauneuf (2018)
+      </a>
+    </p>
+  </footer>
+</body>
+</html>
